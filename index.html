@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen JavaScript</title>
+    <style>
+        #caja {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #333;
+        }
+        .fondo-negro {
+            background-color: black;
+            color: white;
+        }
+        .fondo-rojo {
+            background-color: red;
+            color: white;
+        }
+        .fondo-azul {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <input id="color" type="text">
+    <button id="btn">Enviar</button>
+    <div id="caja"></div>
+
+    <script>
+        let input = document.querySelector("#color")
+        let btn = document.querySelector("#btn")
+        let caja = document.querySelector("#caja")
+
+
+        console.log(input, btn, caja)
+
+        function muestraColor(){
+            if (input.value == "rojo"){
+                caja.classList.remove("fondo-negro")
+                caja.classList.remove("fondo-azul")
+                caja.classList.add("fondo-rojo")
+                caja.innerHTML="rojo"
+            } else if (input.value == "azul") {
+                caja.classList.remove("fondo-rojo")
+                caja.classList.remove("fondo-negro")
+                caja.classList.add("fondo-azul")
+                caja.innerHTML="azul"
+            } else {
+                caja.classList.remove("fondo-rojo")
+                caja.classList.remove("fondo-azul")
+                caja.classList.add("fondo-negro")
+                caja.innerHTML="ningun color"
+            }
+        }
+
+        console.log(muestraColor)
+
+        btn.addEventListener("click", muestraColor)
+
+
+        let position = 0
+
+        addEventListener("keydown", mueveCaja)
+        function mueveCaja(){
+            if (key.event == "a"){
+                caja.position.left = position = position - 1;
+                caja.position.left = position = position + "px";
+            } if (key.event == "d"){
+                caja.position.left = position = position + 1;
+                caja.position.left = position + "px";
+            }
+        }
+
+
+        console.log(mueveCaja)
+
+    </script>
+
+</body>
+</html>
